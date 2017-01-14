@@ -1,23 +1,23 @@
 // Erotosthenes Seive
 import java.util.*;
 
-public class Primes{
+public class primes{
 	public static void main(String [] args){
-			Primes myprime = new Primes();
-			myprime.getPrimes(50);
+			primes myprime = new primes();
+			myprime.getPrimes(Integer.parseInt(args[0]));
 	}
-	
+
 	public void getPrimes(int n){
-		BitSet sieve = new BitSet(3);
+		BitSet sieve = new BitSet(n);
 		ArrayList<Integer> primes = new ArrayList<Integer>();
 		int size = sieve.size();
-		int last = (int)Math.sqrt(size); //only have to go to the sqrt of n 
-		
+		int last = (int)Math.sqrt(size); //only have to go to the sqrt of n
+
 		//initialize BitSet
 		for(int i = 2; i<size; i++){
 			sieve.set(i);
 		}
-		
+
 		//Seiving Process
 		for(int i = 2; i<= last; i++){
 			if(sieve.get(i)){
@@ -34,14 +34,14 @@ public class Primes{
 			}
 		}
 		*/
-		
+
 		//add it to the primes list
 		for(int i = 2; i< size; i++){
 			if(sieve.get(i)){
 				primes.add(i);
 			}
 		}
-		
+
 		for(Integer p: primes){ //array list does not hold primitive type int
 			System.out.print(p +" ");
 		}
@@ -49,5 +49,5 @@ public class Primes{
 		//or sieve.cardinality;
 		//System.out.println(sieve.toString());
 	}
-	
+
 }
