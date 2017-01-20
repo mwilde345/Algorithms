@@ -2,12 +2,13 @@
 import java.util.*;
 
 public class primes{
+	long startTime = System.currentTimeMillis();
 	public static void main(String [] args){
-			primes myprime = new primes();
-			myprime.getPrimes(Integer.parseInt(args[0]));
+		primes myprime = new primes();
+		myprime.primePi(Integer.parseInt(args[0]));
 	}
 
-	public void getPrimes(int n){
+	public void primePi(int n){
 		BitSet sieve = new BitSet(n);
 		ArrayList<Integer> primes = new ArrayList<Integer>();
 		int size = sieve.size();
@@ -27,17 +28,10 @@ public class primes{
 				}
 			}
 		}
-		/*
-		primes.forEach(function(){
-			if(this){
-				System.out.println(this);
-			}
-		}
-		*/
 
 		//add it to the primes list
 		for(int i = 2; i< size; i++){
-			if(sieve.get(i)){
+			if(sieve.get(i)&&i<n){
 				primes.add(i);
 			}
 		}
@@ -45,9 +39,15 @@ public class primes{
 		for(Integer p: primes){ //array list does not hold primitive type int
 			System.out.print(p +" ");
 		}
-		System.out.println("Number of primes less than or equal to " + size + " is " + primes.size());
+		System.out.println();
+		System.out.println("Number of primes less than or equal to " + n + " is " + primes.size());
+		long endTime = System.currentTimeMillis();
+		System.out.println("Time to run program: "+(endTime - startTime)+" milliseconds");
 		//or sieve.cardinality;
 		//System.out.println(sieve.toString());
 	}
+	/*~ Time to Run (ms)	5	29	166	1159	9572
+N	1000	10000	100000	1000000	10000000
+*/
 
 }
