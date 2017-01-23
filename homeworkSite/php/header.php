@@ -26,7 +26,7 @@
 						<ul class="nav navbar-nav navbar-left">
 	            <li><a href="/index.php">Home</a></li>
 	            <li><a href="/client/week1/week1.php">Week 1</a></li>
-							<li><a href="/client/week2.php">Week 2</a></li>
+							<li><a href="/client/week2/week2.php">Week 2</a></li>
 							<li><a href="/client/week3.php">Week 3</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
