@@ -1,65 +1,176 @@
 <div class="panel panel-info">
-  <h3 class="panel-heading">1. Using Eratosthenes sieve, write a function
-    primePi that takes a positive integer n and computes the number of primes
-    less than or equal to n (for example, primePi(2) = 1 and primePi(100) = 25).
+  <h3 class="panel-heading">10.  Use the gcd function to find and print the
+    group of units modulo n for n = 5 to 100.  Print them out in this format:
+    Ex. n = 8: GroupOfUnitsMod 8 = {1,3,5,7}.  Also include the number of
+    elements. (This equals phi(n)).
 </h3>
   <div class="panel-body">
     <div>
       <img id="hwImage" src="./PrimePi.PNG"/>
     </div>
     <pre><code>
-      // Erotosthenes Seive
+    C:\Users\Miraclebob\Documents\GitHub\Algorithms\GroupOfUnits>javac groupOfUnits.java
+
+    C:\Users\Miraclebob\Documents\GitHub\Algorithms\GroupOfUnits>java groupOfUnits
+    Group of Units mod 5: [1, 2, 3, 4]
+    Group of Units mod 6: [1, 5]
+    Group of Units mod 7: [1, 2, 3, 4, 5, 6]
+    Group of Units mod 8: [1, 3, 5, 7]
+    Group of Units mod 9: [1, 2, 4, 5, 7, 8]
+    Group of Units mod 10: [1, 3, 7, 9]
+    Group of Units mod 11: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    Group of Units mod 12: [1, 5, 7, 11]
+    Group of Units mod 13: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    Group of Units mod 14: [1, 3, 5, 9, 11, 13]
+    Group of Units mod 15: [1, 2, 4, 7, 8, 11, 13, 14]
+    Group of Units mod 16: [1, 3, 5, 7, 9, 11, 13, 15]
+    Group of Units mod 17: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    Group of Units mod 18: [1, 5, 7, 11, 13, 17]
+    Group of Units mod 19: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+    Group of Units mod 20: [1, 3, 7, 9, 11, 13, 17, 19]
+    Group of Units mod 21: [1, 2, 4, 5, 8, 10, 11, 13, 16, 17, 19, 20]
+    Group of Units mod 22: [1, 3, 5, 7, 9, 13, 15, 17, 19, 21]
+    Group of Units mod 23: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+    Group of Units mod 24: [1, 5, 7, 11, 13, 17, 19, 23]
+    Group of Units mod 25: [1, 2, 3, 4, 6, 7, 8, 9, 11, 12, 13, 14, 16, 17, 18, 19, 21, 22, 23, 24]
+    Group of Units mod 26: [1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25]
+    Group of Units mod 27: [1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17, 19, 20, 22, 23, 25, 26]
+    Group of Units mod 28: [1, 3, 5, 9, 11, 13, 15, 17, 19, 23, 25, 27]
+    Group of Units mod 29: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 2
+    Group of Units mod 30: [1, 7, 11, 13, 17, 19, 23, 29]
+    Group of Units mod 31: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 2
+    Group of Units mod 32: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31]
+    Group of Units mod 33: [1, 2, 4, 5, 7, 8, 10, 13, 14, 16, 17, 19, 20, 23, 25, 26, 28, 29, 31, 32]
+    Group of Units mod 34: [1, 3, 5, 7, 9, 11, 13, 15, 19, 21, 23, 25, 27, 29, 31, 33]
+    Group of Units mod 35: [1, 2, 3, 4, 6, 8, 9, 11, 12, 13, 16, 17, 18, 19, 22, 23, 24, 26, 27, 29, 31, 32, 33, 34]
+    Group of Units mod 36: [1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35]
+    Group of Units mod 37: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 2
+    Group of Units mod 38: [1, 3, 5, 7, 9, 11, 13, 15, 17, 21, 23, 25, 27, 29, 31, 33, 35, 37]
+    Group of Units mod 39: [1, 2, 4, 5, 7, 8, 10, 11, 14, 16, 17, 19, 20, 22, 23, 25, 28, 29, 31, 32, 34, 35, 37, 38]
+    Group of Units mod 40: [1, 3, 7, 9, 11, 13, 17, 19, 21, 23, 27, 29, 31, 33, 37, 39]
+    Group of Units mod 41: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 2
+    Group of Units mod 42: [1, 5, 11, 13, 17, 19, 23, 25, 29, 31, 37, 41]
+    Group of Units mod 43: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 2
+    Group of Units mod 44: [1, 3, 5, 7, 9, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 35, 37, 39, 41, 43]
+    Group of Units mod 45: [1, 2, 4, 7, 8, 11, 13, 14, 16, 17, 19, 22, 23, 26, 28, 29, 31, 32, 34, 37, 38, 41, 43, 44]
+    Group of Units mod 46: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45]
+    Group of Units mod 47: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 2
+    Group of Units mod 48: [1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37, 41, 43, 47]
+    Group of Units mod 49: [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25, 26, 27, 29, 30, 31,
+    Group of Units mod 50: [1, 3, 7, 9, 11, 13, 17, 19, 21, 23, 27, 29, 31, 33, 37, 39, 41, 43, 47, 49]
+    Group of Units mod 51: [1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 19, 20, 22, 23, 25, 26, 28, 29, 31, 32, 35, 37, 38, 40, 41, 43
+    Group of Units mod 52: [1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 41, 43, 45, 47, 49, 51]
+    Group of Units mod 53: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 2
+    Group of Units mod 54: [1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37, 41, 43, 47, 49, 53]
+    Group of Units mod 55: [1, 2, 3, 4, 6, 7, 8, 9, 12, 13, 14, 16, 17, 18, 19, 21, 23, 24, 26, 27, 28, 29, 31, 32, 34, 36, 37,
+    Group of Units mod 56: [1, 3, 5, 9, 11, 13, 15, 17, 19, 23, 25, 27, 29, 31, 33, 37, 39, 41, 43, 45, 47, 51, 53, 55]
+    Group of Units mod 57: [1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17, 20, 22, 23, 25, 26, 28, 29, 31, 32, 34, 35, 37, 40, 41, 43
+    Group of Units mod 58: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 5
+    Group of Units mod 59: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 2
+    Group of Units mod 60: [1, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 49, 53, 59]
+    Group of Units mod 61: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 2
+     60]
+    Group of Units mod 62: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 5
+    Group of Units mod 63: [1, 2, 4, 5, 8, 10, 11, 13, 16, 17, 19, 20, 22, 23, 25, 26, 29, 31, 32, 34, 37, 38, 40, 41, 43, 44, 4
+    Group of Units mod 64: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 5
+    Group of Units mod 65: [1, 2, 3, 4, 6, 7, 8, 9, 11, 12, 14, 16, 17, 18, 19, 21, 22, 23, 24, 27, 28, 29, 31, 32, 33, 34, 36,
+    Group of Units mod 66: [1, 5, 7, 13, 17, 19, 23, 25, 29, 31, 35, 37, 41, 43, 47, 49, 53, 59, 61, 65]
+    Group of Units mod 67: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 2
+     60, 61, 62, 63, 64, 65, 66]
+    Group of Units mod 68: [1, 3, 5, 7, 9, 11, 13, 15, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 53, 55, 5
+    Group of Units mod 69: [1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17, 19, 20, 22, 25, 26, 28, 29, 31, 32, 34, 35, 37, 38, 40, 41
+    Group of Units mod 70: [1, 3, 9, 11, 13, 17, 19, 23, 27, 29, 31, 33, 37, 39, 41, 43, 47, 51, 53, 57, 59, 61, 67, 69]
+    Group of Units mod 71: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 2
+     60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70]
+    Group of Units mod 72: [1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37, 41, 43, 47, 49, 53, 55, 59, 61, 65, 67, 71]
+    Group of Units mod 73: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 2
+     60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72]
+    Group of Units mod 74: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 39, 41, 43, 45, 47, 49, 51, 53, 5
+    Group of Units mod 75: [1, 2, 4, 7, 8, 11, 13, 14, 16, 17, 19, 22, 23, 26, 28, 29, 31, 32, 34, 37, 38, 41, 43, 44, 46, 47, 4
+    Group of Units mod 76: [1, 3, 5, 7, 9, 11, 13, 15, 17, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 5
+    Group of Units mod 77: [1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 13, 15, 16, 17, 18, 19, 20, 23, 24, 25, 26, 27, 29, 30, 31, 32, 34,
+    , 76]
+    Group of Units mod 78: [1, 5, 7, 11, 17, 19, 23, 25, 29, 31, 35, 37, 41, 43, 47, 49, 53, 55, 59, 61, 67, 71, 73, 77]
+    Group of Units mod 79: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 2
+     60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78]
+    Group of Units mod 80: [1, 3, 7, 9, 11, 13, 17, 19, 21, 23, 27, 29, 31, 33, 37, 39, 41, 43, 47, 49, 51, 53, 57, 59, 61, 63,
+    Group of Units mod 81: [1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17, 19, 20, 22, 23, 25, 26, 28, 29, 31, 32, 34, 35, 37, 38, 40
+    Group of Units mod 82: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 43, 45, 47, 49, 51, 53, 5
+    Group of Units mod 83: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 2
+     60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82]
+    Group of Units mod 84: [1, 5, 11, 13, 17, 19, 23, 25, 29, 31, 37, 41, 43, 47, 53, 55, 59, 61, 65, 67, 71, 73, 79, 83]
+    Group of Units mod 85: [1, 2, 3, 4, 6, 7, 8, 9, 11, 12, 13, 14, 16, 18, 19, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 36,
+    , 79, 81, 82, 83, 84]
+    Group of Units mod 86: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 45, 47, 49, 51, 53, 5
+    Group of Units mod 87: [1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17, 19, 20, 22, 23, 25, 26, 28, 31, 32, 34, 35, 37, 38, 40, 41
+    Group of Units mod 88: [1, 3, 5, 7, 9, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 57, 5
+    Group of Units mod 89: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 2
+     60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88]
+    Group of Units mod 90: [1, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 49, 53, 59, 61, 67, 71, 73, 77, 79, 83, 89]
+    Group of Units mod 91: [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25, 27, 29, 30, 31, 32, 33,
+    , 75, 76, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90]
+    Group of Units mod 92: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 5
+    Group of Units mod 93: [1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17, 19, 20, 22, 23, 25, 26, 28, 29, 32, 34, 35, 37, 38, 40, 41
+    91, 92]
+    Group of Units mod 94: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 49, 51, 53, 5
+    Group of Units mod 95: [1, 2, 3, 4, 6, 7, 8, 9, 11, 12, 13, 14, 16, 17, 18, 21, 22, 23, 24, 26, 27, 28, 29, 31, 32, 33, 34,
+    , 79, 81, 82, 83, 84, 86, 87, 88, 89, 91, 92, 93, 94]
+    Group of Units mod 96: [1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37, 41, 43, 47, 49, 53, 55, 59, 61, 65, 67, 71, 73, 77,
+    Group of Units mod 97: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 2
+     60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90,
+    Group of Units mod 98: [1, 3, 5, 9, 11, 13, 15, 17, 19, 23, 25, 27, 29, 31, 33, 37, 39, 41, 43, 45, 47, 51, 53, 55, 57, 59,
+    Group of Units mod 99: [1, 2, 4, 5, 7, 8, 10, 13, 14, 16, 17, 19, 20, 23, 25, 26, 28, 29, 31, 32, 34, 35, 37, 38, 40, 41, 43
+    97, 98]
+    Group of Units mod 100: [1, 3, 7, 9, 11, 13, 17, 19, 21, 23, 27, 29, 31, 33, 37, 39, 41, 43, 47, 49, 51, 53, 57, 59, 61, 63,
+    </pre></code>
+    <pre><code>
+
       import java.util.*;
 
-      public class primes{
-      	long startTime = System.currentTimeMillis();
+      public class groupOfUnits {
       	public static void main(String [] args){
-      		primes myprime = new primes();
-      		myprime.primePi(Integer.parseInt(args[0]));
-      	}
-
-      	public void primePi(int n){
-      		BitSet sieve = new BitSet(n);
-      		ArrayList&ltInteger> primes = new ArrayList&ltInteger>();
-      		int size = sieve.size();
-      		int last = (int)Math.sqrt(size); //only have to go to the sqrt of n
-
-      		//initialize BitSet
-      		for(int i = 2; i&ltsize; i++){
-      			sieve.set(i);
+      		int n = 27;
+      		int elem;
+      		int ord;
+      		ArrayList<Integer> units = new ArrayList<Integer>();
+      		ArrayList<Integer> roots = new ArrayList<Integer>();
+      		for(int j = 5; j<=100; j++){
+      			ArrayList<Integer> groupOfUnits = new ArrayList<Integer>();
+      			for(int i = 1; i<j; i++){
+      				if(gcd(i,j)==1)
+      					groupOfUnits.add(i);
+      			}
+      			System.out.println("Group of Units mod "+j+": "+groupOfUnits.toString());
       		}
-
-      		//Seiving Process
-      		for(int i = 2; i&lt= last; i++){
-      			if(sieve.get(i)){
-      				for(int j = 2*i; j&ltsize; j+=i){
-      					//knock off its multiples
-      					sieve.clear(j);
-      				}
+      		Iterator<Integer> it = units.iterator();
+      		while (it.hasNext()){
+      			elem = it.next();
+      			ord = order(elem,n);
+      			if(ord == units.size()){
+      				roots.add(elem);
       			}
       		}
-
-      		//add it to the primes list
-      		for(int i = 2; i&lt size; i++){
-      			if(sieve.get(i)&&i&ltn){
-      				primes.add(i);
+      	}
+      	public static int gcd(int n, int m){
+      		if(m==0){
+      			return n;
+      		}
+      		else{
+      			return gcd(m, n%m);
+      		}
+      	}
+      	public static int order(int m, int n){
+      		int count = 0;
+      		int power = 1;
+      		for(int i = 1; i<n; i++){
+      			++count;
+      			power = (power*m) % n;
+      			if(power==1){
+      				return count;
       			}
       		}
-
-      		for(Integer p: primes){ //array list does not hold primitive type int
-      			System.out.print(p +" ");
-      		}
-      		System.out.println();
-      		System.out.println("Number of primes less than or equal to " + n + " is " + primes.size());
-      		long endTime = System.currentTimeMillis();
-      		System.out.println("Time to run program: "+(endTime - startTime)+" milliseconds");
-      		//or sieve.cardinality;
-      		//System.out.println(sieve.toString());
+      		return -1;
       	}
-      	/*~ Time to Run (ms)	5	29	166	1159	9572
-      N	1000	10000	100000	1000000	10000000
-      */
-
       }
 
     </pre></code>
