@@ -8,19 +8,17 @@ public class groupOfUnits {
 		int ord;
 		ArrayList<Integer> units = new ArrayList<Integer>();
 		ArrayList<Integer> roots = new ArrayList<Integer>();
-		for(int j = 5; j<=100; j++){
-			ArrayList<Integer> groupOfUnits = new ArrayList<Integer>();
-			for(int i = 1; i<j; i++){
-				if(gcd(i,j)==1)
-					groupOfUnits.add(i);
-			}
-			System.out.print("Size of Group of Units mod "+j+": "+groupOfUnits.size());
-			if(groupOfUnits.size()==(j-1)){
-				System.out.println(" **is Prime**");
+		for(int j = 5; j<=20; j++){
+			ArrayList<Integer> groupUnits = getGroupOfUnits(j);
+			//System.out.print("Size of Group of Units mod "+j+": "+groupOfUnits.size());
+			if(groupUnits.size()==(j-1)){
+				//System.out.println(" **is Prime**");
 			}else{
-				System.out.println();
+				//System.out.println();
 			}
-			//System.out.println("Group of Units mod "+j+": "+groupOfUnits.toString());
+			System.out.println("Group of Units mod "+j+": "+groupUnits.toString());
+			System.out.println("Inverses of that group: "+getInverses(groupUnits,j));
+			System.out.println();
 		}
 		Iterator<Integer> it = units.iterator();
 		while (it.hasNext()){
@@ -38,6 +36,26 @@ public class groupOfUnits {
 		else{
 			return gcd(m, n%m);
 		}
+	}
+
+	public static ArrayList<Integer> getGroupOfUnits(int mod){
+		int j = mod;
+		ArrayList<Integer> groupUnits = new ArrayList<Integer>();
+		for(int i = 1; i<j; i++){
+			if(gcd(i,j)==1)
+				groupUnits.add(i);
+		}
+		return groupUnits;
+	}
+
+
+	public static ArrayList<Integer> getInverses(ArrayList<Integer> set, int mod){
+		ArrayList<Integer> inverses = new ArrayList<Integer>();
+		for(int i: set){
+			int iOrder = order(i,mod);
+			inverses.add((int)Math.pow(i,iOrder-1)%mod);
+		}
+		return inverses;
 	}
 	public static int order(int m, int n){
 		int count = 0;
