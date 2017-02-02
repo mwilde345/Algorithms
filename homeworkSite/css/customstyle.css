@@ -5,3 +5,15 @@
 	white-space: pre;
 	overflow-x:auto;
 }
+code {
+	height: 400px !important;
+}
+
+#imageDiv {
+	height: 400px;
+	overflow: auto;
+}
+
+#hwImage {
+	width: 100%;
+}
