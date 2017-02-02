@@ -11,8 +11,11 @@
     <div id="imageDiv">
       <img id="hwImage" src="./Homework1.1.jpg"/>
     </div>
+<<<<<<< HEAD
 	<div id="imageDiv">
 	<img id="hwImage" src="./homework1.2.jpg"/>
 	</div>
+=======
+>>>>>>> 5a5569aa44017a7b2bb5837a39ea29fcd89764a7
   </div>
 </div>

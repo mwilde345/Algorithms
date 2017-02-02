@@ -141,5 +141,15 @@ Then, write the algorithm in the formal notation we illustrated last time.
       	}
       }
     </pre></code>
+<<<<<<< HEAD
+=======
+    <pre><code>
+      Fill array with n-1 to 1
+      Loop from 1 to n, convert each number to binary
+      For every 1 in the binary number, map it to the number in the first array
+        Add the mapping for every binary number to a 2d array
+      print the 2d array
+    </pre></code>
+>>>>>>> 5a5569aa44017a7b2bb5837a39ea29fcd89764a7
   </div>
 </div>

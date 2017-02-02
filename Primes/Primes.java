@@ -37,9 +37,13 @@ public class primes{
 		}
 
 		for(Integer p: primes){ //array list does not hold primitive type int
-			System.out.print(p +" ");
+			//System.out.print(p +" ");
 		}
+<<<<<<< HEAD
 		System.out.println();
+=======
+		//System.out.println();
+>>>>>>> 5a5569aa44017a7b2bb5837a39ea29fcd89764a7
 		System.out.println("Number of primes less than or equal to " + n + " is " + primes.size());
 		long endTime = System.currentTimeMillis();
 		System.out.println("Time to run program: "+(endTime - startTime)+" milliseconds");
