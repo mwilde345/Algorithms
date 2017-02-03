@@ -31,7 +31,7 @@ public class helperClass{
   public void fermatRatio(){
 	  modularexp me = new modularexp();
 	  for(int i = 5; i<1000; i++){
-		  double passFermat = 0;
+		  int passFermat = 0;
 		  for(int g = 1; g<i; g++){
 			  if(me.modexp(g, i-1, i)==1){
 				  ++passFermat; 
@@ -43,7 +43,7 @@ public class helperClass{
 		  if(passFermat/(i-1)<=(1.0/2.0)){
 			  System.out.println("Composite: "+i);
 		  }
-		  if((passFermat/(i-1)>(1.0/2.0))&&passFermat/(i-1)<1.0){
+		  if((passFermat/(i-1)>(1.0/2.0))&&passFermat/(i-1)<1){
 			  System.out.println("SPECIAL CASE: "+i);
 		  }
 		  

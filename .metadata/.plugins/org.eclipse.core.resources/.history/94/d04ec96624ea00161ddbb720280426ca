@@ -43,7 +43,7 @@ public class helperClass{
 		  if(passFermat/(i-1)<=(1.0/2.0)){
 			  System.out.println("Composite: "+i);
 		  }
-		  if((passFermat/(i-1)>(1.0/2.0))&&passFermat/(i-1)<1.0){
+		  if((passFermat/(i-1)>(1.0/2.0))&&passFermat/(i-1)<1){
 			  System.out.println("SPECIAL CASE: "+i);
 		  }
 		  
