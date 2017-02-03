@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Algorithms_Eclipse/src/GroupOfUnits/PandQOutput.txt&apos; to &apos;Week3.3.1.txt&apos;" description="Rename resource &apos;PandQOutput.txt&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/GroupOfUnits/PandQOutput.txt" name="Week3.3.1.txt" stamp="1486090224863" updateReferences="true"/>
+</session>
