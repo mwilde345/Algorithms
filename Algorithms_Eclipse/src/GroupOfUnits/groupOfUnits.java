@@ -8,7 +8,7 @@ public class groupOfUnits {
 		int ord;
 		ArrayList<Integer> units = new ArrayList<Integer>();
 		ArrayList<Integer> roots = new ArrayList<Integer>();
-		for(int j = 5; j<=20; j++){
+		for(int j = 34; j<=35; j++){
 			ArrayList<Integer> groupUnits = getGroupOfUnits(j);
 			//System.out.print("Size of Group of Units mod "+j+": "+groupOfUnits.size());
 			if(groupUnits.size()==(j-1)){
@@ -18,7 +18,7 @@ public class groupOfUnits {
 			}
 			System.out.println("Group of Units mod "+j+": "+groupUnits.toString());
 			System.out.println("Inverses of that group: "+getInverses(groupUnits,j));
-			System.out.println();
+			System.out.println(groupUnits.size());
 		}
 		Iterator<Integer> it = units.iterator();
 		while (it.hasNext()){
