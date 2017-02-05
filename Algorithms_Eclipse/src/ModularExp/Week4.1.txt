@@ -1,8 +1,0 @@
-598987215
-Program 1 took 938667 nanoseconds.
-
-286378533
-Program 1 took 779778 nanoseconds.
-
-454438017
-Program 1 took 793467 nanoseconds.
