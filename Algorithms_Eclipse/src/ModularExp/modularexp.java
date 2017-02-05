@@ -5,10 +5,8 @@
 package ModularExp;
 public class modularexp{
   public static void main(String [] args){
-    int a = Integer.parseInt(args[0]);
-    int b = Integer.parseInt(args[1]);
-    int n = Integer.parseInt(args[2]);
-    System.out.println(modexp(a,b,n));
+	  int years = modexp(10,596,60)%60%24%356;
+	  System.out.println(years+" years in 10^596 seonds");
   }
   public static int modexp(int a,int b,int n){
     int d = 1;
