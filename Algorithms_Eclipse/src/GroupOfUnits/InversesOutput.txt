@@ -1,0 +1,48 @@
+F:\Users\Matthew\Documents\GitHub\Algorithms\GroupOfUnits>java groupOfUnits
+Group of Units mod 5: [1, 2, 3, 4]
+Inverses of that group: [1, 3, 2, 4]
+
+Group of Units mod 6: [1, 5]
+Inverses of that group: [1, 5]
+
+Group of Units mod 7: [1, 2, 3, 4, 5, 6]
+Inverses of that group: [1, 4, 5, 2, 3, 6]
+
+Group of Units mod 8: [1, 3, 5, 7]
+Inverses of that group: [1, 3, 5, 7]
+
+Group of Units mod 9: [1, 2, 4, 5, 7, 8]
+Inverses of that group: [1, 5, 7, 2, 4, 8]
+
+Group of Units mod 10: [1, 3, 7, 9]
+Inverses of that group: [1, 7, 3, 9]
+
+Group of Units mod 11: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+Inverses of that group: [1, 6, 4, 3, 9, 2, 8, 7, 5, 10]
+
+Group of Units mod 12: [1, 5, 7, 11]
+Inverses of that group: [1, 5, 7, 11]
+
+Group of Units mod 13: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+Inverses of that group: [1, 7, 9, 10, 8, 11, 2, 5, 3, 4, 10, 12]
+
+Group of Units mod 14: [1, 3, 5, 9, 11, 13]
+Inverses of that group: [1, 5, 3, 11, 9, 13]
+
+Group of Units mod 15: [1, 2, 4, 7, 8, 11, 13, 14]
+Inverses of that group: [1, 8, 4, 13, 2, 11, 7, 14]
+
+Group of Units mod 16: [1, 3, 5, 7, 9, 11, 13, 15]
+Inverses of that group: [1, 11, 13, 7, 9, 3, 5, 15]
+
+Group of Units mod 17: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+Inverses of that group: [1, 9, 6, 13, 8, 8, 8, 15, 2, 8, 8, 8, 4, 8, 8, 16]
+
+Group of Units mod 18: [1, 5, 7, 11, 13, 17]
+Inverses of that group: [1, 11, 13, 5, 7, 17]
+
+Group of Units mod 19: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+Inverses of that group: [1, 10, 13, 5, 4, 16, 11, 12, 17, 2, 7, 8, 2, 2, 2, 2, 2, 18]
+
+Group of Units mod 20: [1, 3, 7, 9, 11, 13, 17, 19]
+Inverses of that group: [1, 7, 3, 9, 11, 17, 13, 19]

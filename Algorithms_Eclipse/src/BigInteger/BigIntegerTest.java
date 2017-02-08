@@ -13,13 +13,7 @@ public static void main(String [] args){
     BigInteger phi_of_n;
     BigInteger e;
     BigInteger d;    
-    //BigInteger a = new BigInteger("123456789");
-    //BigInteger b = new BigInteger("12345678901");
-    //BigInteger m = new BigInteger("987654321");
-    //long start = System.nanoTime();
-    //BigInteger result = a.modPow(b, m);
-    //System.out.println(result.toString());
-    //System.out.println("Program 1 took "+(System.nanoTime()-start)+" nanoseconds.");
+    
     //start = System.nanoTime();
     //System.out.println(randomInteger(300));
     //System.out.println("Next Prime: \n"+randomPrime(300));
@@ -66,35 +60,33 @@ public static void main(String [] args){
   
   public void RabinMillerTest(){
 	  this.n = randomInteger(1024);
+	  //this.n = new BigInteger("750");
 	  BigInteger two = new BigInteger("2");
 	  //we know if it is even that it's not prime. we want prime
-	  if(n.getLowestSetBit()==0) n.add(BigInteger.ONE);
-	  while(two.modPow(n.subtract(BigInteger.ONE), n)!=BigInteger.ONE){
-		  n.add(two);
-	  }
+	  if(this.n.getLowestSetBit()!=0) n = n.add(BigInteger.ONE);
 	  
+	  while(!two.modPow(n.subtract(BigInteger.ONE), n).equals(BigInteger.ONE)){
+		  n = n.add(two);
+	  }	  
 	  int counter = 0;
+	   
 	  while(counter<100){
 		  this.a = randomInteger(1024);
 		  while(a.compareTo(n)>=0){
-			  //make a one less than n. instead of generating lots of randoms in a while loop.
-			  //this.a = a.subtract((n.subtract(a).add(BigInteger.ONE)));//randomInteger(1024);
-			  this.a= randomInteger(1024);
+			  a= randomInteger(1024);
 		  }
 		  if(gcd(a,n).equals(BigInteger.ONE)){
 			  counter++;
 		  }else{
-			  //counter = 0;
-			  RabinMillerTest();
-			 /* this.n = randomInteger(1024);
-			  //we know if it is even that it's not prime. we want prime
-			  if(n.getLowestSetBit()==0) n.add(BigInteger.ONE);
-			  while(!two.modPow(n.subtract(BigInteger.ONE), n).equals(BigInteger.ONE)){
-				  n.add(two);
-			  }*/
+			  System.out.println(counter);
+			  break;
 		  }		  
 	  }
-	  System.out.println("Found a likely prime n: \n"+n.toString());
+	  if(counter!=100){
+		  RabinMillerTest();
+	  }else{
+		  System.out.println("Found a likely prime n: \n"+n.toString());
+	  }
 	  
   }
   
