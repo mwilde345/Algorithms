@@ -7,8 +7,9 @@ import java.lang.*;
 public class helperClass{
   public static void main(String [] args){
     helperClass hc = new helperClass();
+    groupOfUnits gou = new groupOfUnits();
     subsets s = new subsets();
-    hc.findOrders(new String[] {"7","11","15","24"});
+    //hc.findOrders(new String[] {"7","11","15","24"});
     //hc.findPhi();
     //s.findSubsets(5);
     //hc.PandQ(new int[] {2,3,5,7,11,13,17,19,23,29});
@@ -17,6 +18,8 @@ public class helperClass{
     //System.out.println(Math.pow(767, 942)%943);
     //hc.checkPrimes();
     //hc.fermatRatio();
+    //gou.getInverses(hc.findPhi(2537),2537);
+    hc.findOrders(new String[] {Integer.toString(gou.getGroupOfUnits(2537).size())});
   }
   
   public void checkPrimes(){

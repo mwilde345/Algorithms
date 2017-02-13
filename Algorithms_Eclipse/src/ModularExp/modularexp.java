@@ -6,7 +6,11 @@ package ModularExp;
 public class modularexp{
   public static void main(String [] args){
 	  int years = modexp(10,596,60)%60%24%356;
-	  System.out.println(years+" years in 10^596 seonds");
+	  //System.out.println(years+" years in 10^596 seonds");
+	  int [] plaintext = {1520,111,802,1004,2402,1724,1519,1406,1700,1507,24};
+	  for(int i : plaintext){
+		  System.out.println(modexp(i,13,2537));
+	  }
   }
   public static int modexp(int a,int b,int n){
     int d = 1;

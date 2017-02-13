@@ -17,7 +17,7 @@ public class groupOfUnits {
 				//System.out.println();
 			}
 			System.out.println("Group of Units mod "+j+": "+groupUnits.toString());
-			System.out.println("Inverses of that group: "+getInverses(groupUnits,j));
+			//System.out.println("Inverses of that group: "+getInverses(groupUnits,j));
 			System.out.println(groupUnits.size());
 		}
 		Iterator<Integer> it = units.iterator();
@@ -49,7 +49,7 @@ public class groupOfUnits {
 	}
 
 
-	public static ArrayList<Integer> getInverses(ArrayList<Integer> set, int mod){
+	public ArrayList<Integer> getInverses(ArrayList<Integer> set, int mod){
 		ArrayList<Integer> inverses = new ArrayList<Integer>();
 		for(int i: set){
 			int iOrder = order(i,mod);
