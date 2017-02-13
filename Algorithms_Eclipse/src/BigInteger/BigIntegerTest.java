@@ -19,7 +19,9 @@ public static void main(String [] args){
     //System.out.println("Next Prime: \n"+randomPrime(300));
     BigIntegerTest bi = new BigIntegerTest();
     //bi.testBigInteger();
-    bi.RabinMillerTest();
+    //bi.RabinMillerTest();
+    System.out.println(bi.inverse(new BigInteger("13"), new BigInteger("2436")));
+    
   }
   
   public BigIntegerTest(){

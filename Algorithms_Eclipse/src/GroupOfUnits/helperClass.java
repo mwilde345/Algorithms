@@ -19,7 +19,8 @@ public class helperClass{
     //hc.checkPrimes();
     //hc.fermatRatio();
     //gou.getInverses(hc.findPhi(2537),2537);
-    hc.findOrders(new String[] {Integer.toString(gou.getGroupOfUnits(2537).size())});
+    //int mod = hc.findPhi(2537);
+    //hc.findOrders(mod);
   }
   
   public void checkPrimes(){
@@ -54,18 +55,11 @@ public class helperClass{
 	  
   }
   
-  public void findPhi(){
-    int[] input = {2,3,5,7,11,13,17,19,23,29};
+  public int findPhi(int input){
     groupOfUnits gou = new groupOfUnits();
-    ArrayList<Integer> inputList = new ArrayList<Integer>();
-    ArrayList<Integer> output = new ArrayList<Integer>();
-    for(int i: input){
-      inputList.add(i);
-      ArrayList<Integer> groupUnits = gou.getGroupOfUnits(i);
-      output.add(groupUnits.size());
-    }
-    System.out.println("Input numbers: "+inputList.toString());
-    System.out.println("PHI of each number: "+output.toString());
+  
+    ArrayList<Integer> groupUnits = gou.getGroupOfUnits(input);
+    return groupUnits.size();
   }
   
   public void PandQ(int[] inputArray){
@@ -127,19 +121,16 @@ public class helperClass{
 	  }
   }
 
-  public void findOrders(String[] args){
-    groupOfUnits gou = new groupOfUnits();
-    for(String s: args){
-     int i = Integer.parseInt(s);
-     ArrayList<Integer> groupUnits = gou.getGroupOfUnits(i);
-     System.out.println("Group of units mod "+i+": "+groupUnits.toString());
-     ArrayList<Integer> orders = new ArrayList<Integer>();
-     for(int j : groupUnits){
-       orders.add(gou.order(j,i));
-     }
-     System.out.println("Orders of elements mod "+i+": "+orders.toString());
-     System.out.println("Inverses of elements mod "+i+": "+gou.getInverses(groupUnits,i).toString());
-     System.out.println();
-    }
+  public void findOrders(int mod){
+	 groupOfUnits gou = new groupOfUnits();
+	 ArrayList<Integer> groupUnits = gou.getGroupOfUnits(mod);
+	 System.out.println("Group of units mod "+mod+": "+groupUnits.toString());
+	 ArrayList<Integer> orders = new ArrayList<Integer>();
+	 for(int j : groupUnits){
+	   orders.add(gou.order(j,mod));
+	 }
+	 System.out.println("Orders of elements mod "+mod+": "+orders.toString());
+	 System.out.println("Inverses of elements mod "+mod+": "+gou.getInverses(groupUnits,mod).toString());
+	 System.out.println();
   }
 }
