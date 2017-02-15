@@ -1,0 +1,24 @@
+package RSA;
+import GroupOfUnits.groupUnits;
+import java.math.BigInteger;
+
+public class FullRSA {
+	public static void main(String[] args){
+		
+		System.out.println()
+	}	
+	
+	
+	  public static BigInteger multiply(BigInteger a, BigInteger b){
+		  return a.multiply(b);
+	  }
+	  public static BigInteger gcd(BigInteger a, BigInteger b){
+		  return a.gcd(b);
+	  }
+	  public static BigInteger inverse(BigInteger a, BigInteger m){
+		  return a.modInverse(m);
+	  }
+	  public static BigInteger modexp(BigInteger a, BigInteger b, BigInteger m){
+		  return a.modPow(b, m);
+	  }
+}

@@ -1,0 +1,84 @@
+package RSA;
+
+import GroupOfUnits.groupOfUnits;
+
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Random;
+
+public class FullRSA {
+	public static void main(String[] args) {
+		FullRSA fr = new FullRSA();
+		groupOfUnits gou = new groupOfUnits();
+		BigInteger p = randomInteger(300);
+		BigInteger q = randomInteger(300);
+		while (!fr.checkProduct(p, q)) {
+			p = randomInteger(300);
+			q = randomInteger(300);
+		}
+		BigInteger n = p.multiply(q);
+		BigInteger phi_n = p.subtract(BigInteger.ONE).multiply(
+				q.subtract(BigInteger.ONE));
+		//public key
+		BigInteger e = new BigInteger("65537");
+		//private key
+		BigInteger d = inverse(e, phi_n);
+		FileToString fs = new FileToString("src/cs-description.txt");
+		//System.out.println(fs.fileString);
+		ArrayList<String> blocks = fr.toStringBlocks(fs.fileString);
+		for(String s : blocks){
+			System.out.println(s);
+		}
+	}
+	
+	public ArrayList<String> toStringBlocks(String input){
+		ArrayList<String> blocks = new ArrayList<String>();
+		char[] chars = input.toCharArray();
+		int index = 0;
+		int upperlimit = 0;
+		String stringToAdd = "";
+		while(index<input.length()){
+			upperlimit = input.length()-index <200 ? input.length()-index : 200;
+			String.format("%1$-" + n + "s", s); 
+			stringToAdd = input.substring(index,index+upperlimit)
+			blocks.add();
+			index += upperlimit;
+		}
+		return blocks;
+	}
+	
+	public boolean checkProduct(BigInteger p, BigInteger q) {
+		BigInteger product = p.multiply(q);
+		return product.toString().length() >= 600
+				&& Integer.parseInt(product.toString().substring(0, 6)) > 355355;
+	}
+
+	// Return random
+	public static BigInteger randomInteger(int ndigits) {
+		Random rand = new Random();
+		int len = (int) (3.32 * (double) ndigits); // log(10)/log(2) = 3.32
+		return new BigInteger(len, rand);
+	}
+
+	// Return random prime approx. ngidits in length
+	public static BigInteger randomPrime(int ndigits) {
+		BigInteger p = randomInteger(ndigits);
+		return p.nextProbablePrime();
+	}
+
+	public static BigInteger multiply(BigInteger a, BigInteger b) {
+		return a.multiply(b);
+	}
+
+	public static BigInteger gcd(BigInteger a, BigInteger b) {
+		return a.gcd(b);
+	}
+
+	public static BigInteger inverse(BigInteger a, BigInteger m) {
+		return a.modInverse(m);
+	}
+
+	public static BigInteger modexp(BigInteger a, BigInteger b, BigInteger m) {
+		return a.modPow(b, m);
+	}
+}

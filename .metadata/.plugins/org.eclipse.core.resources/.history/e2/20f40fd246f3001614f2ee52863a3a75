@@ -1,0 +1,34 @@
+package RSA;
+import GroupOfUnits.groupOfUnits;
+
+import java.math.BigInteger;
+import java.util.ArrayList;
+
+public class FullRSA {
+	public static void main(String[] args){
+		groupOfUnits gou = new groupOfUnits();
+		BigInteger mod = BigInteger.valueOf(gou.getGroupOfUnits(2537).size());
+		int[] encipher= new int[] {1520,111,802,1005,2403,1724,1519,1406,1700,1507,2400};
+		ArrayList<Integer> cyphered = new ArrayList<Integer>();
+		for(int e : encipher){
+			int item = Integer.valueOf(modexp(BigInteger.valueOf(e),BigInteger.valueOf(13),mod).toString());
+			cyphered.add();
+		}
+		System.out.println(inverse(new BigInteger("13"),mod).toString());
+		
+	}	
+	
+	
+	  public static BigInteger multiply(BigInteger a, BigInteger b){
+		  return a.multiply(b);
+	  }
+	  public static BigInteger gcd(BigInteger a, BigInteger b){
+		  return a.gcd(b);
+	  }
+	  public static BigInteger inverse(BigInteger a, BigInteger m){
+		  return a.modInverse(m);
+	  }
+	  public static BigInteger modexp(BigInteger a, BigInteger b, BigInteger m){
+		  return a.modPow(b, m);
+	  }
+}
