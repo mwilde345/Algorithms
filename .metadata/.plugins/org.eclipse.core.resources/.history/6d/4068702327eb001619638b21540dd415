@@ -1,0 +1,40 @@
+//slow exponentiation
+//compute a^b mod n
+///Complexity: this approach is linear to the exponent, or b.
+//because you are doing that a= line b times.
+package ModularExp;
+
+import java.math.BigInteger;
+import java.util.Random;
+
+public class BigIntModularExp{
+  public static void main(String [] args){
+	  
+  }
+  public static BigInteger modexp(BigInteger a,BigInteger b,BigInteger n){
+    BigInteger d = BigInteger.ONE;
+    String bin = b.toString(2);
+    for(int i = 0; i<bin.length(); i++){
+      d = (d*d) % n;
+      if(bin.charAt(i) =='1'){
+        d = (d*a)%n;
+      }
+    }
+    if(d<0){
+      //java will return negatives from the residue set {-n....-2,-1,0,1,2,....n}
+      d = d+n;
+    }
+    return d;
+  }
+  
+  public static BigInteger randomInteger (int ndigits){
+	Random rand = new Random();
+	int len = (int)(3.32*(double)ndigits); //log(10)/log(2) = 3.32
+    return new BigInteger(len,rand);
+  }
+  //Return random prime approx. ngidits in length
+  public static BigInteger randomPrime (int ndigits){
+    BigInteger p = randomInteger(ndigits);
+    return p.nextProbablePrime();
+  }
+}
