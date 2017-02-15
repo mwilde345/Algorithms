@@ -5,7 +5,8 @@ import java.io.*;
 public class FileToString {
 	String fileString;
 	public FileToString(String inputFileName){
-		fileString = cleanText(fileToString(inputFileName));
+		//fileString = cleanText(fileToString(inputFileName));
+		fileString = fileToString(inputFileName);
 	}
 
 	public static String fileToString(String fileName) {
