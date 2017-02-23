@@ -1,7 +1,0 @@
-package RSA;
-
-public class FullRSA {
-	public static void main(String[] args){
-		System.out.println((int)"PUBLIC KEY CRYPTOGRAPHY");
-	}
-}

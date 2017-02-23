@@ -18,8 +18,9 @@ public class FullRSA {
 	public static void main(String[] args) throws IOException {
 		FullRSA fr = new FullRSA();
 		groupOfUnits gou = new groupOfUnits();
-		BigInteger p = randomPrime(300);
-		BigInteger q = randomPrime(300);
+		//BigInteger p = randomPrime(300);
+		BigInteger p = BigInteger.probablePrime((int)(300*3.2)+1,new Random());
+		BigInteger q = BigInteger.probablePrime((int)(300*3.2)+1,new Random());
 		while (!fr.checkProduct(p, q)) {
 			p = randomInteger(300).nextProbablePrime();
 			q = randomInteger(300).nextProbablePrime();
@@ -40,14 +41,6 @@ public class FullRSA {
 		ArrayList<String> backToStringBlocks = fr
 				.plainTextToStringBlocks(decrypted);
 		fr.writeToFile(backToStringBlocks,"src/output.txt");
-		
-		for (BigInteger b : plaintext) {
-			System.out.println(b.toString());
-		}
-		System.out.println("Middle");
-		for (BigInteger b : decrypted) {
-			// System.out.println(b.toString());
-		}
 		for (String s : backToStringBlocks) {
 			System.out.println(s);
 		}
