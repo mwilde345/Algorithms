@@ -1,0 +1,9 @@
+package Permutation;
+
+public class ListPermutationSize {
+	public static void main(String[] args){
+		ListPermutationSize perm = new ListPermutationSize();
+		perm.nPermsSize(100);
+	}
+	
+}

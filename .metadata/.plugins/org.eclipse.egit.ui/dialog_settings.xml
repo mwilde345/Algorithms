@@ -4,10 +4,12 @@
 	<item value="F:\Users\Matthew\Documents\GitHub\Algorithms\.git" key="GitSelectRepositoryPage.lastRepository"/>
 	<item value="true" key="CommitDialog.showUntracked"/>
 	<list key="CommitDialog.authorValues">
+		<item value="matthewwilde &lt;matthewwilde@ELC310-05.suuad.suu.edu&gt;"/>
 		<item value="matthewwilde &lt;matthewwilde@ELC310-18.suuad.suu.edu&gt;"/>
 		<item value="Matthew Wilde &lt;mwilde345@gmail.com&gt;"/>
 	</list>
 	<list key="CommitDialog.committerValues">
+		<item value="matthewwilde &lt;matthewwilde@ELC310-05.suuad.suu.edu&gt;"/>
 		<item value="matthewwilde &lt;matthewwilde@ELC310-18.suuad.suu.edu&gt;"/>
 		<item value="Matthew Wilde &lt;mwilde345@gmail.com&gt;"/>
 	</list>

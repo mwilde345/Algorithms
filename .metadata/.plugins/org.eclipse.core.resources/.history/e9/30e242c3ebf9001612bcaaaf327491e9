@@ -1,0 +1,24 @@
+package Permutation;
+
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Map;
+
+public class ListPermutationSize {
+	public static void main(String[] args){
+		ListPermutationSize perm = new ListPermutationSize();
+		System.out.println(perm.nPermsSize(100).toString());
+	}
+	public Map<String,String> nPermsSize(double n){
+		Map<String,String> results = new Map<String, String>();
+		for(double i = 1; i<=n; i++){
+			BigInteger fact = BigInteger.ONE;
+			for(int j = 1; j<=i; j++){
+				fact = fact.multiply(BigInteger.valueOf(j));
+			}
+			results.put("N = "+i, fact.toString());
+		}
+		return results;
+	}
+	
+}
