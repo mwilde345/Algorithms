@@ -6,29 +6,34 @@ import java.util.ArrayList;
 public class Unrank {
 	public static void main(String[] args){
 		Unrank u = new Unrank();
-		u.unrankMe(new BigInteger("5"),new BigInteger("57"));
+		u.unrankMe(new BigInteger("7"),new BigInteger("1000"));
 	}
-	
 	public void unrankMe(BigInteger order, BigInteger rank){
-		
 		ArrayList<BigInteger> notUsed = populateNotUsed(order);
+		ArrayList<BigInteger> permutation = new ArrayList<BigInteger>();
 		BigInteger remainder = rank; //57
 		BigInteger currentBase = order.subtract(BigInteger.ONE); //4
+		int counter = 1;
 		while(remainder.compareTo(BigInteger.ZERO)>0){
 			BigInteger baseFactorial = getFactorial(currentBase); //4!
-			BigInteger count = BigInteger.ZERO; //0
-			BigInteger sum = baseFactorial; //24
-			while(sum.add(sum).compareTo(remainder)<0){ //24<57, 48<57
+			BigInteger count = BigInteger.ONE;
+			BigInteger sum = baseFactorial;
+			while(sum.add(baseFactorial).compareTo(remainder)<0){
 				count=count.add(BigInteger.ONE);
-				sum=sum.add(sum);
-				//System.out.println(sum.toString());
+				sum=sum.add(baseFactorial);
 			}
-			remainder = rank.subtract(sum);
+			remainder = remainder.subtract(sum);
 			currentBase = currentBase.subtract(BigInteger.ONE);
-			System.out.println(remainder.toString());
+			int countIndex = Integer.valueOf(count.toString());
+			if(countIndex<notUsed.size()){
+				permutation.add(notUsed.get(countIndex));
+				notUsed.remove(countIndex);
+			}
 		}
+		//add in the last value from notUsed
+		permutation.add(notUsed.get(0));
+		System.out.println(permutation.toString());
 	}
-	
 	public BigInteger getFactorial(BigInteger base){
 		BigInteger fact = BigInteger.ONE;
 		for(BigInteger j = BigInteger.ONE; j.compareTo(base)<=0; j=j.add(BigInteger.ONE)){
@@ -36,12 +41,11 @@ public class Unrank {
 		}
 		return fact;
 	}
-	
 	public ArrayList<BigInteger> populateNotUsed(BigInteger order){
 		ArrayList<BigInteger> result = new ArrayList<BigInteger>();
 		for(BigInteger j = BigInteger.ONE; j.compareTo(order)<=0; j=j.add(BigInteger.ONE)){
 			result.add(j);
-		}		
+		}
 		return result;
 	}
 }
