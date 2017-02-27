@@ -6,19 +6,20 @@ import java.util.ArrayList;
 public class Unrank {
 	public static void main(String[] args){
 		Unrank u = new Unrank();
-		u.unrankMe(new BigInteger("7"),new BigInteger("1000"));
+		u.unrankMe(new BigInteger("100"),new BigInteger("99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999"));
 	}
 	public void unrankMe(BigInteger order, BigInteger rank){
 		ArrayList<BigInteger> notUsed = populateNotUsed(order);
 		ArrayList<BigInteger> permutation = new ArrayList<BigInteger>();
 		BigInteger remainder = rank; //57
 		BigInteger currentBase = order.subtract(BigInteger.ONE); //4
-		int counter = 1;
-		while(remainder.compareTo(BigInteger.ZERO)>0){
+		int counter = 0;
+		while(notUsed.size()>0){
 			BigInteger baseFactorial = getFactorial(currentBase); //4!
-			BigInteger count = BigInteger.ONE;
-			BigInteger sum = baseFactorial;
-			while(sum.add(baseFactorial).compareTo(remainder)<0){
+			BigInteger sum = baseFactorial.compareTo(remainder)<=0?baseFactorial:BigInteger.ZERO;
+			BigInteger count = sum.compareTo(BigInteger.ZERO)>0?BigInteger.ONE:BigInteger.ZERO;
+			//if do we add the factorials until the remainder is 0? or stop before remainder hits zero and go to the next iteration?
+			while(sum.add(baseFactorial).compareTo(remainder)<=0){
 				count=count.add(BigInteger.ONE);
 				sum=sum.add(baseFactorial);
 			}
@@ -30,8 +31,6 @@ public class Unrank {
 				notUsed.remove(countIndex);
 			}
 		}
-		//add in the last value from notUsed
-		permutation.add(notUsed.get(0));
 		System.out.println(permutation.toString());
 	}
 	public BigInteger getFactorial(BigInteger base){
