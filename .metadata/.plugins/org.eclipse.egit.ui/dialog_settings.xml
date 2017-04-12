@@ -4,14 +4,14 @@
 	<item value="F:\Users\Matthew\Documents\GitHub\Algorithms\.git" key="GitSelectRepositoryPage.lastRepository"/>
 	<item value="true" key="CommitDialog.showUntracked"/>
 	<list key="CommitDialog.authorValues">
+		<item value="Matthew Wilde &lt;mwilde345@gmail.com&gt;"/>
 		<item value="matthewwilde &lt;matthewwilde@ELC310-05.suuad.suu.edu&gt;"/>
 		<item value="matthewwilde &lt;matthewwilde@ELC310-18.suuad.suu.edu&gt;"/>
-		<item value="Matthew Wilde &lt;mwilde345@gmail.com&gt;"/>
 	</list>
 	<list key="CommitDialog.committerValues">
+		<item value="Matthew Wilde &lt;mwilde345@gmail.com&gt;"/>
 		<item value="matthewwilde &lt;matthewwilde@ELC310-05.suuad.suu.edu&gt;"/>
 		<item value="matthewwilde &lt;matthewwilde@ELC310-18.suuad.suu.edu&gt;"/>
-		<item value="Matthew Wilde &lt;mwilde345@gmail.com&gt;"/>
 	</list>
 	<section name="org.eclipse.egit.ui.internal.dialogs.ResetTargetSelectionDialog.dialogBounds">
 		<item value="538" key="DIALOG_WIDTH"/>
@@ -24,8 +24,8 @@
 	</section>
 	<section name="org.eclipse.egit.ui.internal.push.PushResultDialog.dialogBounds">
 		<item value="666" key="DIALOG_WIDTH"/>
-		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|5|0|Segoe UI" key="DIALOG_FONT_NAME"/>
-		<item value="458" key="DIALOG_HEIGHT"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="457" key="DIALOG_HEIGHT"/>
 		<item value="236" key="DIALOG_X_ORIGIN"/>
 		<item value="67" key="DIALOG_Y_ORIGIN"/>
 		<list key="sashWeights">
