@@ -2630,6 +2630,7 @@ java.lang.ArrayIndexOutOfBoundsException: 1034
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1426)
 <<<<<<< HEAD
+<<<<<<< HEAD
 !SESSION 2017-02-25 16:22:41.067 -----------------------------------------------
 eclipse.buildId=4.3.2.M20140221-1700
 java.version=1.8.0_51
@@ -4198,6 +4199,8 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1426)
 =======
+=======
+>>>>>>> 68c1130ac0073b0f795a7a6cc7d398075f0da7d2
 
 !ENTRY org.eclipse.core.jobs 4 2 2017-02-27 13:36:13.817
 !MESSAGE An internal error occurred during: "Resetting to refs/remotes/origin/master".
@@ -4466,4 +4469,7 @@ org.eclipse.jgit.api.errors.WrongRepositoryStateException: Cannot pull into a re
 	at org.eclipse.egit.ui.internal.pull.PullOperationUI$1.runInWorkspace(PullOperationUI.java:131)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+<<<<<<< HEAD
+>>>>>>> 68c1130ac0073b0f795a7a6cc7d398075f0da7d2
+=======
 >>>>>>> 68c1130ac0073b0f795a7a6cc7d398075f0da7d2
