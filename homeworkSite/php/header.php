@@ -31,6 +31,10 @@
               <li><a href="/client/week4/week4.php">Week 4</a></li>
               <li><a href="/client/week5/week5.php">Week 5</a></li>
               <li><a href="/client/week6/week6.php">Week 6</a></li>
+              <li><a href="/client/week7/week7.php">Week 7</a></li>
+              <li><a href="/client/week8/week8.php">Week 8</a></li>
+              <li><a href="/client/week9/week9.php">Week 9</a></li>
+              <li><a href="/client/week10/week10.php">Week 10</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="/client/feedback.php">Leave Feedback</a></li>
